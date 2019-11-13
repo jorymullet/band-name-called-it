@@ -40,5 +40,5 @@ export default {
     .public-main-container
       background-color: white
       .router-view
-        height: calc(100vh - #{$nav-height})
+        min-height: calc(100vh - #{$nav-height})
 </style>

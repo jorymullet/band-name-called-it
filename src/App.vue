@@ -2,30 +2,19 @@
 import ProToast from '$common/ProToast'
 import Loading from '$common/Loading'
 import ModalsMain from '$modals/Main'
+import { UncoolAdmin } from 'uncool' // <--- Import at the top of the javascript
 export default {
   name: 'App',
   components: {
     'pro-toast': ProToast,
     'loading': Loading,
     'modals-main': ModalsMain,
+    'uncool-admin': UncoolAdmin, // <--- declare the component
   },
   methods: {
     getEntities (uid) {
       return uid
     },
-    async listenForUser () {
-      this.$auth.onAuthStateChanged(async (auth) => {
-        this.$store.commit('update', {auth})
-        if (auth) {
-          const entities = await this.getEntities(auth.uid)
-          console.log(entities)
-          this.$router.push({name: 'FileDashboard'})
-        }
-      })
-    },
-  },
-  mounted () {
-    this.listenForUser()
   },
 }
 </script>
@@ -33,6 +22,7 @@ export default {
 
 <template lang='pug'>
   #app
+    uncool-admin
     modals-main
     router-view
     pro-toast

@@ -46,34 +46,17 @@ export default {
   .public-home-main
     .public-home-container
       .content
-        .header.font-1-thin Be confident about 
-          span.bold.font-1-bold your file.
-        .info-action
-          .info-holder
-            .item File in minutes
-            .item 100s of file types
-            .item Up-to-date language
-          .action
-            .pro-form
-              .form-row(
-                v-for='(options, field) in formOptions'
-              )
-                pro-input(
-                  :options='options'
-                  v-model='form[field]'
-                )
-              .form-row.buttons-2
-                .pro-button(
-
-                ) Forgot Password
-                .pro-button.outline.major(
-                  @click='login'
-                ) Sign in
-        .sign-up-holder
-          .copy Don't have an account? 
-          .pro-button.outline(
-            @click='() => $router.push({name: "PublicSignUp"})'
-          ) Get one here
+        .header.font-1-thin What band name 
+          span.bold.font-1-bold you callin'?
+        .uncool-things
+          .picture(
+            v-uncool.image='"home-pic"'
+          )
+          .bands-holder
+            .title BANDS 
+            .list(
+              v-uncool='"bands-list"'
+            ) a list
 </template>
 
 <style lang="sass" scoped>
@@ -92,33 +75,17 @@ export default {
           padding: 30px 0
           > .bold
             text-decoration: underline
-        .info-action
-          padding: 15px 0
-          width: 100%
+        .uncool-things
           display: grid
-          grid-template-columns: max-content auto
-          .info-holder
-            background-color: $nh-yellow
-            border:  thin solid $nh-amber
-            padding: 20px 35px
-            .item
-              @extend .font-1-thin
-              display: list-item
-              list-style-type: disc
-              list-style-position: inside
-              font-size: 1.4em
-              margin: 25px 0
-              width: fit-content
-          .action
-            padding: 20px 0 0 80px
-            .pro-form
-              .buttons-1
-                padding-top: 15px
-        .sign-up-holder
-          padding: 50px 0
-          justify-self: baseline
-          > *
-            display: inline
-          .pro-button
-            margin-left: 25px
+          grid-template-columns: 400px auto
+          .picture
+            width: 100%
+            height: 500px
+          .bands-holder
+            padding: 0 40px
+            .title
+              font-size: 2em
+              font-weight: 600
+              text-decoration: underline
+          
 </style>

@@ -21,7 +21,7 @@ export default {
       .title-holder
         .title(
           @click='$flashLoading(() => $router.push({name: "PublicHome"}))'
-        ) Vue Firebase Template
+        ) BAND NAME CALLED IT
       .actions
         .logout(
           v-if='auth'

@@ -50,6 +50,13 @@ const router = new Router({
           },
         },
       ],
+      meta: {
+        title: 'Time to yeet',
+      },
+    },
+    {
+      path: '/edit', // this can be whatever you need it to be
+      name: 'UncoolAdmin', // this needs to be 'UncoolAdmin'
     },
     {
       path: '/files',
@@ -73,6 +80,11 @@ const router = new Router({
       component: admin.main,
     },
   ]
+})
+
+router.beforeEach((to, from, next) => {
+  document.title = 'time to yeet'
+  next()
 })
 
 export default router

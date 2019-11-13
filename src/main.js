@@ -49,6 +49,10 @@ Vue.use(regex)
 import loading from './global/plugins/loading'
 Vue.use(loading)
 
+import uncool from 'uncool'
+Vue.use(uncool)
+import 'uncool/src/style.sass' // styling to denote editable items
+
 Vue.config.productionTip = false
 
 export const ThisVue = new Vue({
